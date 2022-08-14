@@ -1,24 +1,25 @@
 package com.ms.study.stream;
 
 import com.github.javafaker.Faker;
+import lombok.extern.java.Log;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * convert List<List<String>> to List<String>
  */
+@Log
 public class Problem4 {
     public static void main(String[] args) {
         List<List<String>> got = new ArrayList<>();
         got.add(createCharacterNames());
         got.add(createCityNames());
-        System.out.println(got);
+        log.info("Input List: " + got);
         List<String> flatMapResult = got.stream().flatMap(Collection::stream).collect(Collectors.toList());
-        System.out.println(flatMapResult);
+        log.info("After Flat Map: " + flatMapResult);
     }
 
     public static List<String> createCharacterNames() {
