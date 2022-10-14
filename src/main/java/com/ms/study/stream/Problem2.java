@@ -12,8 +12,10 @@ import java.util.stream.Collectors;
 @Log
 public class Problem2 {
     public static void main(String[] args) {
-        List<String> nameList =Arrays.asList("Mac", "Max", "John", "Jacob");
-        List<String> result = nameList.stream().filter(name -> name.startsWith("M")).collect(Collectors.toList());
+        List<String> nameList = Arrays.asList("Mac", "Max", "John", "Jacob");
+        List<String> result = nameList.stream()
+                .filter(name -> name.startsWith("M"))
+                .collect(Collectors.toList());
         log.info("Names starts with M: " + result);
     }
 }
